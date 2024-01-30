@@ -14,3 +14,38 @@ int print_str(const char *string)
     }
     return (i);
 }
+void ft_putchar(char c)
+ {
+    write(1, &c, 1);
+ }
+int print_int(int num) 
+{
+    int num_1 = num; 
+    int length = 0;
+
+      while (num) 
+        {
+            num /= 10;
+            length++;
+        }   
+
+    if(num_1 >= 0 && num_1 < 10) 
+        ft_putchar(num_1 + '0');
+    else if(num_1 < 0)
+    {
+        ft_putchar('-');
+        print_int(-num_1);
+    }
+    else
+    {
+        print_int(num_1 / 10);
+        print_int(num_1 % 10);
+    }
+
+   return (length);
+}
+void print_fl(double floatValue, int intValue) {
+    char buffer[20];
+    int chars_written = snprintf(buffer, sizeof(buffer), "%f", floatValue);
+    
+}

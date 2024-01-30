@@ -18,8 +18,19 @@ int _printf(const char* format, ...) {
                 case 'c':
                     length_string += print_char(va_arg(args, int));
                     break;
-                    case 's':
+                case 's':
                     length_string += print_str(va_arg(args,const char*));
+                    break;
+                    case 'd' :
+                    case 'i':
+                    length_string+= print_int(va_arg(args,int));
+                        break;
+                    case 'f':
+                        print_fl(va_arg(args, double), va_arg(args, int));
+                       break;
+                case '%':
+                    write(1,"%",1);
+                    length_string ++;
                     break;
                 }
             i++;  
@@ -36,7 +47,8 @@ int _printf(const char* format, ...) {
     return length_string;
 }
 
-int main() {
-    char c[10] = "yassin";
-    _printf("hello  %s\n", c); 
+int main() 
+{
+    int c = 1000;
+    _printf("%d\n",c); 
 }

@@ -44,8 +44,3 @@ int print_int(int num)
 
    return (length);
 }
-void print_fl(double floatValue, int intValue) {
-    char buffer[20];
-    int chars_written = snprintf(buffer, sizeof(buffer), "%f", floatValue);
-    
-}

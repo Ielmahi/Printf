@@ -25,9 +25,9 @@ int _printf(const char* format, ...) {
                     case 'i':
                     length_string+= print_int(va_arg(args,int));
                         break;
-                    case 'f':
-                        print_fl(va_arg(args, double), va_arg(args, int));
-                       break;
+                    // case 'f':
+                    //     print_fl(va_arg(args, double), va_arg(args, int));
+                    //    break;
                 case '%':
                     write(1,"%",1);
                     length_string ++;
